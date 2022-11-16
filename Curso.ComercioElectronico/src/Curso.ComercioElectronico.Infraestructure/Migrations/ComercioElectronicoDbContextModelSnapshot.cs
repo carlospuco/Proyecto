@@ -36,9 +36,54 @@ namespace Curso.ComercioElectronico.Infraestructure.Migrations
                         .HasMaxLength(80)
                         .HasColumnType("TEXT");
 
+                    b.Property<Guid>("TipoClienteId")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
+                    b.HasIndex("TipoClienteId");
+
                     b.ToTable("Clientes");
+                });
+
+            modelBuilder.Entity("Curso.ComercioElectronico.Domain.Entidades.Carro", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("CantidadProductos")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<Guid>("ClienteId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClienteId");
+
+                    b.ToTable("Carros");
+                });
+
+            modelBuilder.Entity("Curso.ComercioElectronico.Domain.Entidades.CarroItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("CarroId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<Guid>("ProductoId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarroId");
+
+                    b.HasIndex("ProductoId");
+
+                    b.ToTable("CarrosItems");
                 });
 
             modelBuilder.Entity("Curso.ComercioElectronico.Domain.Entidades.Orden", b =>
@@ -99,6 +144,34 @@ namespace Curso.ComercioElectronico.Infraestructure.Migrations
                     b.HasIndex("OrdenId");
 
                     b.ToTable("OrdenesItems");
+                });
+
+            modelBuilder.Entity("Curso.ComercioElectronico.Domain.Entidades.TipoCliente", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NumeroCuentaAhorro")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NumeroCuentaCorriente")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TipoEntidadCliente")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TiposClientes");
                 });
 
             modelBuilder.Entity("Curso.ComercioElectronico.Domain.Marca", b =>
@@ -173,6 +246,47 @@ namespace Curso.ComercioElectronico.Infraestructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TiposProducto");
+                });
+
+            modelBuilder.Entity("Curso.ComercioElectronico.Domain.Cliente", b =>
+                {
+                    b.HasOne("Curso.ComercioElectronico.Domain.Entidades.TipoCliente", "TipoCliente")
+                        .WithMany()
+                        .HasForeignKey("TipoClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TipoCliente");
+                });
+
+            modelBuilder.Entity("Curso.ComercioElectronico.Domain.Entidades.Carro", b =>
+                {
+                    b.HasOne("Curso.ComercioElectronico.Domain.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cliente");
+                });
+
+            modelBuilder.Entity("Curso.ComercioElectronico.Domain.Entidades.CarroItem", b =>
+                {
+                    b.HasOne("Curso.ComercioElectronico.Domain.Entidades.Carro", "Carro")
+                        .WithMany()
+                        .HasForeignKey("CarroId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Curso.ComercioElectronico.Domain.Producto", "Producto")
+                        .WithMany()
+                        .HasForeignKey("ProductoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Carro");
+
+                    b.Navigation("Producto");
                 });
 
             modelBuilder.Entity("Curso.ComercioElectronico.Domain.Entidades.Orden", b =>

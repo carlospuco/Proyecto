@@ -26,5 +26,7 @@ namespace Curso.ComercioElectronico.Application.Dtos
         public Guid OrdenId { get; set; }
         [Required]
         public Orden Orden  { get; set; }
+
+        
     }
 }

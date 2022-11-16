@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Curso.ComercioElectronico.Application;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Curso.ComercioElectronico.HttpApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
     public class ClienteController : ControllerBase
     {
         private readonly IClienteAppService clienteAppService;
@@ -18,11 +20,12 @@ namespace Curso.ComercioElectronico.HttpApi.Controllers
             this.clienteAppService = clienteAppService;
         }
 
+       
         [HttpGet]
-        public ICollection<ClienteDto> GetAll()
+        public ListaPaginada<ClienteDto> GetAll(int limit = 10, int offset = 0)
         {
 
-            return clienteAppService.GetAll();
+            return clienteAppService.GetAll(limit, offset);
 
         }
 

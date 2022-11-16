@@ -7,7 +7,8 @@ namespace Curso.ComercioElectronico.Application
 {
     public interface IClienteAppService
     {
-    ICollection<ClienteDto> GetAll();
+    ListaPaginada<ClienteDto> GetAll(int limit=10,int offset=0);
+    ListaPaginada<ClienteDto> GetByText(int limit=10,int offset=0,string campo="",string parametro="");
 
     Task<ClienteDto> CreateAsync(ClienteCrearActualizarDto cliente);
 
@@ -16,3 +17,6 @@ namespace Curso.ComercioElectronico.Application
     Task<bool> DeleteAsync(Guid clienteId);
     }
 }
+
+
+        

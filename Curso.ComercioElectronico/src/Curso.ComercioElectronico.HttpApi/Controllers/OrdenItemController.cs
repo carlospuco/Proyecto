@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Curso.ComercioElectronico.Application;
 using Curso.ComercioElectronico.Application.Dtos;
 using Curso.ComercioElectronico.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Curso.ComercioElectronico.HttpApi.Controllers
@@ -12,6 +13,7 @@ namespace Curso.ComercioElectronico.HttpApi.Controllers
     
         [ApiController]
         [Route("[controller]")]
+        [Authorize]
         public class OrdenItemController : ControllerBase
         {
             private readonly IOrdenItemAppService ordenItemAppService;

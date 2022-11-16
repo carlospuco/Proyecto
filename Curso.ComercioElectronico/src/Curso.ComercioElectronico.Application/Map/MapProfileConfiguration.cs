@@ -21,6 +21,13 @@ namespace Curso.ComercioElectronico.Application.Map
             CreateMap<Orden,OrdenDto>();
             CreateMap<OrdenItemCrearActualizarDto, OrdenItem>();
             CreateMap<OrdenItem,OrdenItemDto>();
+            CreateMap<TipoClienteCrearActualizarDto, TipoCliente>();
+            CreateMap<TipoCliente,TipoClienteDto>();
+            CreateMap<CarroCrearActualizarDto, Carro>();
+            CreateMap<Carro,CarroDto>();
+            CreateMap<CarroItemCrearActualizarDto, CarroItem>();
+            CreateMap<CarroItem,CarroItemDto>();
+
 
     
         }

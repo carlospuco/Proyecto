@@ -18,6 +18,12 @@ public class ComercioElectronicoDbContext:DbContext, IUnitOfWork
 
     public DbSet<OrdenItem> OrdenesItems{get;set;}
 
+    public DbSet<TipoCliente> TiposClientes{get;set;}
+
+    public DbSet<Carro> Carros{get;set;}
+
+    public DbSet<CarroItem> CarrosItems{get;set;}
+
 
     public string DbPath { get; set; }
 

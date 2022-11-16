@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cJRT0tsQNpGo7lK9tvImYFxrCS6YYJGocckejHDLke/jEIxSWD2otfOc+EHr9gdorxvG+kwokeX3xqEHH5e8Gg==",
+  "dgSpecHash": "lVsjfNHuOSyITOyU7qJIWyOjur+RpXVrZaa9c38oFPS+scmBX2SzlPkh8TZsCnAwzVwfACNc5OVBnIQxFO54xg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\carlo\\Documents\\NET\\Curso.ComercioElectronico\\src\\Curso.ComercioElectronico.Infraestructure\\Curso.ComercioElectronico.Infraestructure.csproj",
+  "projectFilePath": "c:\\Users\\carlo\\Documents\\NET\\Curso.ComercioElectronico\\src\\Curso.ComercioElectronico.Infraestructure\\Curso.ComercioElectronico.Infraestructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\carlo\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\carlo\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.0\\microsoft.data.sqlite.core.7.0.0.nupkg.sha512",

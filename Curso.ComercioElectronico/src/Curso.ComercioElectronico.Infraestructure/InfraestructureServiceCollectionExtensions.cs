@@ -19,6 +19,11 @@ public static class InfraestructureServiceCollectionExtensions
         services.AddTransient<IClienteRepository, ClienteRepository>();
         services.AddTransient<IOrdenRepository, OrdenRepository>();
         services.AddTransient<IOrdenItemRepository, OrdenItemRepository>();
+        services.AddTransient<ITipoClienteRepository, TipoClienteRepository>();
+        services.AddTransient<ICarroRepository, CarroRepository>();
+        services.AddTransient<ICarroItemRepository, CarroItemRepository>();
+       
+
 
         return services;
         

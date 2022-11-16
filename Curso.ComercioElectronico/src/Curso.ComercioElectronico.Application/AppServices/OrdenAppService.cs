@@ -47,10 +47,14 @@ namespace Curso.ComercioElectronico.Application.AppServices
         {
             var ordenList = repository.GetAll();
 
-            var ordenListDto =  from m in ordenList
+            var ordenListDto =  from p in ordenList
                                 select new OrdenDto(){
-                                    Id = m.Id,
-                                    Nombre = m.Nombre
+                                    Id = p.Id,
+                                    Nombre = p.Nombre,
+                                    FechaEmicion = p.FechaEmicion,
+                                    NumeroProductos = p.NumeroProductos,                                
+                                    ClienteId=p.ClienteId,
+                                    Cliente=p.Cliente,
                                 };
             var listaPag = new ListaPaginada<OrdenDto>();
             listaPag.Lista=ordenListDto.ToList();
@@ -60,7 +64,7 @@ namespace Curso.ComercioElectronico.Application.AppServices
 
         public ListaPaginada<OrdenDto> GetByText(int limit = 10, int offset = 0, string campo = "", string parametro = "")
         {
-            var ordenList = repository.GetByText(limit,offset,campo,parametro).ToList();
+            var ordenList = repository.GetAllIncluding(x=>x.Cliente);
 
 
             var ordenListDto =  from p in ordenList

@@ -17,5 +17,7 @@ namespace Curso.ComercioElectronico.Application
         public string Correo { get; set; }
         [Required]
         public string Direccion { get; set; }
+        [Required]
+        public Guid TipoClienteId { get; set; }
     }
 }

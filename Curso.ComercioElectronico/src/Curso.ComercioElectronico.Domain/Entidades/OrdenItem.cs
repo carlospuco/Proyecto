@@ -24,5 +24,7 @@ namespace Curso.ComercioElectronico.Domain.Entidades
         public Guid OrdenId { get; set; }
         [Required]
         public Orden Orden  { get; set; }
+
+
     }
 }

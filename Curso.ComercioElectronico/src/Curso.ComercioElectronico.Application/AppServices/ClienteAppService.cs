@@ -54,7 +54,10 @@ namespace Curso.ComercioElectronico.Application
                                 select new ClienteDto()
                                 {
                                     Id = m.Id,
-                                    Nombre = m.Nombre
+                                    Nombre = m.Nombre,
+                                    Correo = m.Correo,
+                                    Direccion = m.Direccion,
+                                    TipoCliente = m.TipoCliente
                                 };
             
             var listaPag = new ListaPaginada<ClienteDto>();
@@ -63,7 +66,8 @@ namespace Curso.ComercioElectronico.Application
             return listaPag;
         }
 
-        public ICollection<ClienteDto> GetAll()
+
+        public ListaPaginada<ClienteDto> GetByText(int limit = 10, int offset = 0, string campo = "", string parametro = "")
         {
             var clienteList = repository.GetAll();
 
@@ -71,10 +75,18 @@ namespace Curso.ComercioElectronico.Application
                                 select new ClienteDto()
                                 {
                                     Id = m.Id,
-                                    Nombre = m.Nombre
+                                    Nombre = m.Nombre,
+                                    Correo = m.Correo,
+                                    Direccion = m.Direccion,
+                                    TipoClienteId = m.TipoClienteId,
+                                    TipoCliente = m.TipoCliente
+                                    
                                 };
-            // to list devuelve los datos 
-            return clienteListDto.ToList();
+            
+            var listaPag = new ListaPaginada<ClienteDto>();
+            listaPag.Lista = clienteListDto.ToList();
+            listaPag.Total = clienteListDto.ToList().Count();
+            return listaPag;
         }
 
         public async Task UpdateAsync(Guid id, ClienteCrearActualizarDto cliente)
@@ -94,5 +106,6 @@ namespace Curso.ComercioElectronico.Application
 
             return;
         }
+
     }
-}
+    }

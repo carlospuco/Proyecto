@@ -1,6 +1,7 @@
 
 
 using Curso.ComercioElectronico.Application;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Curso.ComercioElectronico.HttpApi.Controllers;
@@ -8,6 +9,7 @@ namespace Curso.ComercioElectronico.HttpApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
+[Authorize]
 public class ProductoController : ControllerBase
 {
 

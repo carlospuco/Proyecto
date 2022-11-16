@@ -15,7 +15,9 @@ public static class ApplicationServiceCollectionExtensions
         services.AddTransient<IClienteAppService, ClienteAppService>();
         services.AddTransient<IOrdenAppservice, OrdenAppService>();
         services.AddTransient<IOrdenItemAppService, OrdenItemAppService>();
-        
+        services.AddTransient<ITipoClienteAppService, TipoClienteAppService>();
+        services.AddTransient<ICarroAppService, CarroAppService>();
+        services.AddTransient<ICarroItemAppService, CarroItemAppService>();
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
         return services;

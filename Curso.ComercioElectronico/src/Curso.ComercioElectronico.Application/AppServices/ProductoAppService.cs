@@ -26,36 +26,6 @@ public class ProductoAppService : IProductoAppService
 
     public async Task<ProductoDto> CreateAsync(ProductoCrearActualizarDto productoDto)
     {
-            // var producto = new Producto();
-            // producto.Nombre=productoDto.Nombre;
-            // producto.Precio=productoDto.Precio;
-            // producto.Observaciones=productoDto.Observaciones;
-            // producto.Caducidad=productoDto.Caducidad;
-            // // producto.ProductoId=productoDto.ProductoId;
-            // producto.Codigo=productoDto.Codigo;
-            // producto.TipoProductoId=productoDto.TipoProductoId;
-            // producto.MarcaId=productoDto.MarcaId;
-
-            // //Persistencia objeto
-            // producto = await repository.AddAsync(producto);
-            // //await unitOfWork.SaveChangesAsync();
-             //await repository..SaveChangesAsync();
-            // return await GetByIdAsync(producto.Id);
-
-            // //Mapeo Entidad => Dto
-            // var productoCreado = new ProductoDto();
-            // productoCreado.Id=producto.Id;
-            // productoCreado.Nombre=producto.Nombre;
-            // productoCreado.Precio=producto.Precio;
-            // productoCreado.Observaciones=producto.Observaciones;
-            // productoCreado.Caducidad=producto.Caducidad;
-            // productoCreado.Codigo=producto.Codigo;
-            // // productoCreado.ProductoId=producto.ProductoId;
-            // productoCreado.TipoProductoId=producto.TipoProductoId;
-            // productoCreado.MarcaId=producto.MarcaId;
-            //return productoCreado; 
-            //mapeo de DTo a la entidad 
-             //Mapeo Dto => Entidad
         
             var productoMapeo = map.Map<Producto>(productoDto);
             productoMapeo = await repository.AddAsync(productoMapeo);
@@ -82,10 +52,18 @@ public class ProductoAppService : IProductoAppService
     {
         var productoList = repository.GetAll();
 
-        var productoListDto =  from m in productoList
+        var productoListDto =  from p in productoList
                             select new ProductoDto(){
-                                Id = m.Id,
-                                Nombre = m.Nombre
+                                Id = p.Id,
+                                Nombre = p.Nombre,
+                                Codigo = p.Codigo,
+                                MarcaId = p.MarcaId,
+                                Precio = p.Precio,
+                                Observaciones=p.Observaciones,
+                                Caducidad=p.Caducidad,
+                                TipoProductoId=p.TipoProductoId,
+                                Marca=p.Marca,
+                                TipoProducto=p.TipoProducto
                             };
         var listaPag = new ListaPaginada<ProductoDto>();
         listaPag.Lista=productoListDto.ToList();
@@ -102,20 +80,6 @@ public class ProductoAppService : IProductoAppService
         {
             System.Console.WriteLine(JsonSerializer.Serialize(iterP));
         }
-
-        // var productoListDto =  from p in productoList
-        //                     select new ProductoDto(){
-        //                         Id = p.Id,
-        //                         Nombre = p.Nombre,
-        //                         Codigo = p.Codigo,
-        //                         MarcaId = p.MarcaId,
-        //                         Precio = p.Precio,
-        //                         Observaciones=p.Observaciones,
-        //                         Caducidad=p.Caducidad,
-        //                         TipoProductoId=p.TipoProductoId,
-        //                         Marca=p.Marca,
-        //                         TipoProducto=p.TipoProducto
-        //                     };
 
         var productoListDto = productoList.Skip(offset)
                                 .Take(limit)

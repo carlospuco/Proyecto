@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\carlo\\Documents\\NET\\Curso.ComercioElectronico\\src\\Curso.ComercioElectronico.Domain\\Curso.ComercioElectronico.Domain.csproj": {
-                "projectPath": "C:\\Users\\carlo\\Documents\\NET\\Curso.ComercioElectronico\\src\\Curso.ComercioElectronico.Domain\\Curso.ComercioElectronico.Domain.csproj"
+              "c:\\Users\\carlo\\Documents\\NET\\Curso.ComercioElectronico\\src\\Curso.ComercioElectronico.Domain\\Curso.ComercioElectronico.Domain.csproj": {
+                "projectPath": "c:\\Users\\carlo\\Documents\\NET\\Curso.ComercioElectronico\\src\\Curso.ComercioElectronico.Domain\\Curso.ComercioElectronico.Domain.csproj"
               }
             }
           }
@@ -76,14 +76,14 @@
         }
       }
     },
-    "C:\\Users\\carlo\\Documents\\NET\\Curso.ComercioElectronico\\src\\Curso.ComercioElectronico.Domain\\Curso.ComercioElectronico.Domain.csproj": {
+    "c:\\Users\\carlo\\Documents\\NET\\Curso.ComercioElectronico\\src\\Curso.ComercioElectronico.Domain\\Curso.ComercioElectronico.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carlo\\Documents\\NET\\Curso.ComercioElectronico\\src\\Curso.ComercioElectronico.Domain\\Curso.ComercioElectronico.Domain.csproj",
+        "projectUniqueName": "c:\\Users\\carlo\\Documents\\NET\\Curso.ComercioElectronico\\src\\Curso.ComercioElectronico.Domain\\Curso.ComercioElectronico.Domain.csproj",
         "projectName": "Curso.ComercioElectronico.Domain",
-        "projectPath": "C:\\Users\\carlo\\Documents\\NET\\Curso.ComercioElectronico\\src\\Curso.ComercioElectronico.Domain\\Curso.ComercioElectronico.Domain.csproj",
+        "projectPath": "c:\\Users\\carlo\\Documents\\NET\\Curso.ComercioElectronico\\src\\Curso.ComercioElectronico.Domain\\Curso.ComercioElectronico.Domain.csproj",
         "packagesPath": "C:\\Users\\carlo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carlo\\Documents\\NET\\Curso.ComercioElectronico\\src\\Curso.ComercioElectronico.Domain\\obj\\",
+        "outputPath": "c:\\Users\\carlo\\Documents\\NET\\Curso.ComercioElectronico\\src\\Curso.ComercioElectronico.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\carlo\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -9,12 +9,15 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.25.0" />
+    <PackageReference Include="Microsoft.AspNetcore.Authentication.JwtBearer" Version="6.0.10" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Curso.ComercioElectronico.Application\Curso.ComercioElectronico.Application.csproj" />
     <ProjectReference Include="..\Curso.ComercioElectronico.Infraestructure\Curso.ComercioElectronico.Infraestructure.csproj" />
     <ProjectReference Include="..\Curso.ComercioElectronico.Domain\Curso.ComercioElectronico.Domain.csproj" />
+
   </ItemGroup>
 
 </Project>

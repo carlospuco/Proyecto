@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/nBXAz2Nj2r+PTNAOqSU+ccUkzXLHbNR4mhmz0ce2XPAZXyXUoJvu0veW/HxcU/YGGJk8yDKQchPaPCJZIQgnw==",
+  "dgSpecHash": "EJIl7thM0gbvC+l9q+lO2L0nwlzjrW5mggRLgR+4c1iyrQpf6QxGTwfmLWPR0A3KUplalorkc+T6CvPfjmIvxw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\carlo\\Documents\\NET\\Curso.ComercioElectronico\\src\\Curso.ComercioElectronico.Domain\\Curso.ComercioElectronico.Domain.csproj",
+  "projectFilePath": "c:\\Users\\carlo\\Documents\\NET\\Curso.ComercioElectronico\\src\\Curso.ComercioElectronico.Domain\\Curso.ComercioElectronico.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
